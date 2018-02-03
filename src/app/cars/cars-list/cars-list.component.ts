@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Car } from '../models/car';
-import { TotalCostComponent } from '../total-cost/total-cost.component';
+import { Car } from '../../models/car';
+import { TotalCostComponent } from './total-cost/total-cost.component';
+import { FormBuilder } from "@angular/forms";
+
 
 @Component({
   selector: 'app-cars-list',
@@ -15,32 +17,32 @@ export class CarsListComponent implements OnInit {
   {
     id: 1,
     model: 'Mazda',
-    //type: '',
+    type: 'a',
     plate: 'AA',
     deliveryDate: '02-02-2018',
     deadline: '03-02-2018',
-    //color: '',
-    //power: '',
+    color: 'a',
+    power: 2,
     clientFirstName: 'John',
     clientSurname: 'Doe',
     cost: 300,
     isFullyDamaged: true,
-    //year: ''
+    year: 2018
   },
   {
     id: 2,
     model: 'Mazda',
-    //type: '',
+    type: '',
     plate: 'AA',
     deliveryDate: '02-02-2018',
     deadline: '03-02-2018',
-    //color: '',
-    //power: '',
+    color: 'red',
+    power: 5,
     clientFirstName: 'Mike',
     clientSurname: 'Doe',
-    cost: 300,
+    cost: 500,
     isFullyDamaged: false,
-    //year: ''
+    year: 2017
   }
   ]
   constructor() { }
@@ -52,7 +54,7 @@ this.countTotalCost();
   showGross() : void {
     this.totalCostRef.showGross();
   }
-  
+
   countTotalCost() : void {
     if (this.cars.length === 0) {
       return;
