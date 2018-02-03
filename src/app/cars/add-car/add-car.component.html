@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="data-container">
-        <form>
+        <form [formGroup]="carForm">
           <div class="row form-group">
             <div class="col-sm-4">
               <label>Model</label>
@@ -55,7 +55,7 @@
             </div>
             <div class="col-sm-4">
               <label>Client Last Name</label>
-              <input formControlName="clientSurname" type="text" class="form-control" placeholder="Client Last Name">
+              <input formControlName="clientSurname" type="text" class="form-control" placeholder="client Last Name">
             </div>
             <div class="col-sm-4">
               <label>Is car fully damaged <br/>

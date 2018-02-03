@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-import { CarsListComponent } from './cars-list/cars-list.component';
-import { TotalCostComponent } from './total-cost/total-cost.component';
-import { AddCarComponent } from './add-car/add-car.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CarsComponent } from './cars/cars.component';
+import { CarsListComponent } from './cars/cars-list/cars-list.component';
+import { TotalCostComponent } from './cars/cars-list/total-cost/total-cost.component';
+import { AddCarComponent } from './cars/add-car/add-car.component';
+import { SearchComponent } from './cars/search/search.component';
+import { SharedModule } from './shared-module/shared-module.module';
 
 
 @NgModule({
@@ -13,10 +16,14 @@ import { AddCarComponent } from './add-car/add-car.component';
     AppComponent,
     CarsListComponent,
     TotalCostComponent,
-    AddCarComponent
+    AddCarComponent,
+    CarsComponent,
+    SearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
