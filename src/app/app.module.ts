@@ -5,13 +5,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CarsListComponent } from './cars-list/cars-list.component';
 import { TotalCostComponent } from './total-cost/total-cost.component';
+import { AddCarComponent } from './add-car/add-car.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsListComponent,
-    TotalCostComponent
+    TotalCostComponent,
+    AddCarComponent
   ],
   imports: [
     BrowserModule
