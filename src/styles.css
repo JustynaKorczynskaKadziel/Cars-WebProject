@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background: lightblue;
+}
+
+
+.carservice-table {
+    background: white;
+  }
+    th {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: black;
+    }
+  
+    td {
+      color:black;
+    }
+  
+    .row-error {
+      border-left: 2px solid red;
+    }

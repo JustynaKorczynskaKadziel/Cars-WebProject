@@ -1,3 +1,31 @@
-<p>
-  cars-list works!
-</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="carservice-table table table-striped">
+        <thead>
+          <tr>
+            <th>car</th>
+            <th>plate</th>
+            <th>delivery date</th>
+            <th>deadline</th>
+            <th>client</th>
+            <th>cost</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars; let i = index">
+            <td> {{ car.model }}</td>
+            <td> {{ car.plate }}</td>
+            <td> {{ car.deliveryDate }}</td>
+            <td> {{ car.deadline}}</td>
+            <td> {{ car.clientFirstName }} {{ car?.clientSurname}}</td>
+            <td csImportant> {{ car.cost}}</td>
+            <td (click)="removeCar(car, $event)"> ( X ) </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
