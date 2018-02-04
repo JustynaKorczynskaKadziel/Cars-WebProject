@@ -4,11 +4,10 @@ export interface Car {
     model: string;
     plate: string;
     deliveryDate: string;
-    power: number;
+    deadline: string;
     clientFirstName: string;
     clientSurname: string;
     cost: number;
     isFullyDamaged: boolean;
-    year: number;
     isCarRepaired: boolean;
   }

@@ -20,12 +20,11 @@ export class CarsListComponent implements OnInit {
     model: 'a',
     plate: 'AA',
     deliveryDate: '02-02-2018',
-    power: 2,
+    deadline: '',
     clientFirstName: 'John',
     clientSurname: 'Doe',
     cost: 300,
     isFullyDamaged: true,
-    year: 2018,
     isCarRepaired: false
   },
   {
@@ -34,12 +33,11 @@ export class CarsListComponent implements OnInit {
     model: '',
     plate: 'AA',
     deliveryDate: '02-02-2018',
-    power: 5,
+    deadline: '',
     clientFirstName: 'Mike',
     clientSurname: 'Doe',
     cost: 500,
     isFullyDamaged: false,
-    year: 2017,
     isCarRepaired: false
   }
   ]

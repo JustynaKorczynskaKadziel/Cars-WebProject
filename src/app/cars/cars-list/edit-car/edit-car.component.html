@@ -25,25 +25,21 @@
   
             <div class="row form-group">
               <div class="col-sm-4">
-                <label>Power</label>
-                <input formControlName="power" type="text" class="form-control" placeholder="power">
-              </div>
-              <div class="col-sm-4">
-                <label>Year</label>
-                <input formControlName="year" type="text" class="form-control" placeholder="year">
-              </div>
-              <div class="col-sm-4">
                 <label>Delivery date *</label>
-                <input formControlName="deliveryDate" type="text" class="form-control" placeholder="delivery date">
+                <input formControlName="deliveryDate" type="text" [readonly]="readOnly" class="form-control" placeholder="delivery date">
                 <p *ngIf="!editCarForm.get('clientSurname').valid && editCarForm.get('clientSurname').dirty" class="error">This field is required!</p>
               </div>
-            </div>
-  
-            <div class="row form-group">
+              <div class="col-sm-4">
+                <label>Deadline</label>
+                <input formControlName="deadline" type="text" class="form-control" placeholder="deadline">
+              </div>
               <div class="col-sm-4">
                 <label>Cost</label>
                 <input formControlName="cost" type="text" class="form-control" placeholder="cost">
               </div>
+            </div>
+  
+            <div class="row form-group">             
               <div class="col-sm-4">
                 <label>Client First Name</label>
                 <input formControlName="clientFirstName" type="text" class="form-control" placeholder="client first name">
@@ -53,10 +49,7 @@
                 <input formControlName="clientSurname" type="text" class="form-control" placeholder="client Last Name">
                 <p *ngIf="!editCarForm.get('clientSurname').valid && editCarForm.get('clientSurname').dirty" class="error">This field is required!</p>
               </div>
-            </div>
-  
-            <div class="row form-group">
-              <div class="col-sm-12">
+              <div class="col-sm-4">           
                 <label>Is car repaired <br/>
                       <input formControlName="isCarRepaired" type="checkbox">
                     </label>

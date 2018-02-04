@@ -25,25 +25,22 @@
 
           <div class="row form-group">
             <div class="col-sm-4">
-              <label>Power</label>
-              <input formControlName="power" type="text" class="form-control" placeholder="power">
-            </div>
-            <div class="col-sm-4">
-              <label>Year</label>
-              <input formControlName="year" type="text" class="form-control" placeholder="year">
-            </div>
-            <div class="col-sm-4">
               <label>Delivery date *</label>
               <input formControlName="deliveryDate" type="text" class="form-control" placeholder="delivery date">
-              <p *ngIf="!addCarForm.get('clientSurname').valid && addCarForm.get('clientSurname').dirty" class="error">This field is required!</p>
+              <p *ngIf="!addCarForm.get('deliveryDate').valid && addCarForm.get('deliveryDate').dirty" class="error">This field is required!</p>
+            </div>
+            <div class="col-sm-4">
+              <label>Deadline *</label>
+              <input formControlName="deadline" type="text" [readonly]="readOnly" class="form-control" placeholder="deadline">
+              <p *ngIf="!addCarForm.get('deadline').valid && addCarForm.get('deadline').dirty" class="error">This field is required!</p>
+            </div>
+            <div class="col-sm-4">
+              <label>Cost</label>
+              <input formControlName="cost" type="text" [value]="cost" [readonly]="readOnly" class="form-control" placeholder="cost">
             </div>
           </div>
 
           <div class="row form-group">
-            <div class="col-sm-4">
-              <label>Cost</label>
-              <input formControlName="cost" type="text" class="form-control" placeholder="cost">
-            </div>
             <div class="col-sm-4">
               <label>Client First Name</label>
               <input formControlName="clientFirstName" type="text" class="form-control" placeholder="client first name">
@@ -53,19 +50,16 @@
               <input formControlName="clientSurname" type="text" class="form-control" placeholder="client Last Name">
               <p *ngIf="!addCarForm.get('clientSurname').valid && addCarForm.get('clientSurname').dirty" class="error">This field is required!</p>
             </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-sm-12">
+            <div class="col-sm-4">
               <label>Is car fully damaged <br/>
-                    <input formControlName="isFullyDamaged" type="checkbox">
+                    <input formControlName="isFullyDamaged" type="checkbox" (change)="deadlineValidity()">
                   </label>
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm-12">
-              <button [disabled]="addCarForm.invalid" class="btn btn-primary float-right">Add car</button>
+              <button [disabled]="addCarForm.invalid" type="submit" class="btn btn-primary float-right">Add car</button>
               <button class="btn btn-default float-right">Cancel</button>
             </div>
           </div>

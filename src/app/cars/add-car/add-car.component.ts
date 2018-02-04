@@ -7,8 +7,10 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   styleUrls: ['./add-car.component.css']
 })
 export class AddCarComponent implements OnInit {
-  addCarForm : FormGroup; //represents the form
-  constructor(private formBuilder : FormBuilder) { }
+  addCarForm: FormGroup; //represents the form
+  readOnly: boolean = false;
+  cost: any = '';
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.addCarForm = this.buildCarForm();
@@ -22,6 +24,7 @@ export class AddCarComponent implements OnInit {
       power: '',
       year: '',
       deliveryDate: '',
+      deadline: ['', Validators.required],
       cost: '',
       clientFirstName: '',
       clientSurname: ['', Validators.required],
@@ -29,4 +32,20 @@ export class AddCarComponent implements OnInit {
     });
   }
 
+deadlineValidity() {
+  const damageControl = this.addCarForm.get('isFullyDamaged');
+  const deadlineControl = this.addCarForm.get('deadline');
+  this.cost = this.addCarForm.get('cost');
+  if (damageControl.value) {
+    deadlineControl.clearValidators();
+    this.readOnly = true;
+    this.cost = 200;
+  } else {
+    deadlineControl.setValidators([Validators.required, Validators.minLength(3), Validators.maxLength(7)]);
+    this.readOnly = false;
+    this.cost = '';
+  }
+
+  deadlineControl.updateValueAndValidity();
+}
 }
