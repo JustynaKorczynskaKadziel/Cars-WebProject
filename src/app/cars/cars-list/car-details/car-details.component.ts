@@ -3,17 +3,19 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Car } from '../../../models/car';
 
 @Component({
-  selector: 'app-edit-car',
-  templateUrl: './edit-car.component.html',
-  styleUrls: ['./edit-car.component.css']
+  selector: 'app-car-details',
+  templateUrl: './car-details.component.html',
+  styleUrls: ['./car-details.component.css']
 })
-export class EditCarComponent implements OnInit {
+export class CarDetailsComponent implements OnInit {
   editCarForm : FormGroup; //represents the form
   car : Car;
+  readOnly: boolean = true;
   constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit() {
     this.editCarForm = this.buildCarForm();
+    
   }
 
   buildCarForm() {

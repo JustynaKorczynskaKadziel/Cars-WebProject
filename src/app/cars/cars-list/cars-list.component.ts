@@ -13,11 +13,13 @@ export class CarsListComponent implements OnInit {
   @ViewChild("totalCostRef") totalCostRef : TotalCostComponent;
   totalCost : number;
   grossCost : number;
+  showForm: boolean = false;
+
   cars : Car[] = [
   {
     id: 1,
     make: 'Mazda',
-    model: 'a',
+    model: 'Model A',
     plate: 'AA',
     deliveryDate: '02-02-2018',
     deadline: '',
@@ -30,7 +32,7 @@ export class CarsListComponent implements OnInit {
   {
     id: 2,
     make: 'Mazda',
-    model: '',
+    model: 'Model B',
     plate: 'AA',
     deliveryDate: '02-02-2018',
     deadline: '',
@@ -63,5 +65,9 @@ this.countTotalCost();
 
   onShownGross(grossCost : number) : void {
     this.grossCost = grossCost;
+  }
+
+  showEditForm() {
+    this.showForm = true;
   }
 }
