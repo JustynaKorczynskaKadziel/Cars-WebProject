@@ -9,9 +9,11 @@ import { CarsListComponent } from './cars/cars-list/cars-list.component';
 import { TotalCostComponent } from './cars/cars-list/total-cost/total-cost.component';
 import { AddCarComponent } from './cars/add-car/add-car.component';
 import { SearchComponent } from './cars/search/search.component';
+import { EditCarComponent } from './cars/cars-list/edit-car/edit-car.component';
 import { SharedModule } from './shared-module/shared-module.module';
 
 import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { RouterModule } from '@angular/router';
     TotalCostComponent,
     AddCarComponent,
     CarsComponent,
-    SearchComponent
+    SearchComponent,
+    EditCarComponent
   ],
   imports: [
     BrowserModule,

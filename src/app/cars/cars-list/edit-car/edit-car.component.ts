@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
-  selector: 'app-add-car',
-  templateUrl: './add-car.component.html',
-  styleUrls: ['./add-car.component.css']
+  selector: 'app-edit-car',
+  templateUrl: './edit-car.component.html',
+  styleUrls: ['./edit-car.component.css']
 })
-export class AddCarComponent implements OnInit {
-  addCarForm : FormGroup; //represents the form
+export class EditCarComponent implements OnInit {
+  editCarForm : FormGroup; //represents the form
   constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit() {
-    this.addCarForm = this.buildCarForm();
+    this.editCarForm = this.buildCarForm();
   }
 
   buildCarForm() {
@@ -25,7 +25,7 @@ export class AddCarComponent implements OnInit {
       cost: '',
       clientFirstName: '',
       clientSurname: ['', Validators.required],
-      isFullyDamaged: '',
+      isCarRepaired: '',
     });
   }
 

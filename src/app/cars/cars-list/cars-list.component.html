@@ -15,10 +15,11 @@
             <th>car</th>
             <th>plate</th>
             <th>delivery date</th>
-            <th>deadline</th>
             <th>client</th>
             <th>cost</th>
-            <th>action</th>
+            <th>view details</th>
+            <th>edit</th>
+            <th>delete</th>
           </tr>
         </thead>
         <tbody>
@@ -26,9 +27,10 @@
             <td csImportant [ngClass]="{'row-error': car.isFullyDamaged}"> {{ car?.model | uppercase }}</td>
             <td> {{ car.plate }}</td>
             <td> {{ car.deliveryDate }}</td>
-            <td> {{ car.deadline}}</td>
             <td> {{ car.clientFirstName }} {{ car?.clientSurname}}</td>
             <td csImportant> {{ car.cost}}</td>
+            <td (click)="editCar(car, $event)"><button type="button" class="btn btn-primary">View Details</button></td>
+            <td (click)="editCar(car, $event)"><button type="button" class="btn btn-success">Edit</button></td>
             <td (click)="removeCar(car, $event)"> ( X ) </td>
           </tr>
         </tbody>
@@ -58,4 +60,5 @@
 </div>
 
 <app-add-car></app-add-car>
+<app-edit-car></app-edit-car>
 

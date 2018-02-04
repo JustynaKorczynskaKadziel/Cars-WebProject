@@ -16,33 +16,31 @@ export class CarsListComponent implements OnInit {
   cars : Car[] = [
   {
     id: 1,
-    model: 'Mazda',
-    type: 'a',
+    make: 'Mazda',
+    model: 'a',
     plate: 'AA',
     deliveryDate: '02-02-2018',
-    deadline: '03-02-2018',
-    color: 'a',
     power: 2,
     clientFirstName: 'John',
     clientSurname: 'Doe',
     cost: 300,
     isFullyDamaged: true,
-    year: 2018
+    year: 2018,
+    isCarRepaired: false
   },
   {
     id: 2,
-    model: 'Mazda',
-    type: '',
+    make: 'Mazda',
+    model: '',
     plate: 'AA',
     deliveryDate: '02-02-2018',
-    deadline: '03-02-2018',
-    color: 'red',
     power: 5,
     clientFirstName: 'Mike',
     clientSurname: 'Doe',
     cost: 500,
     isFullyDamaged: false,
-    year: 2017
+    year: 2017,
+    isCarRepaired: false
   }
   ]
   constructor() { }

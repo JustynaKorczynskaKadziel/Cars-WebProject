@@ -2,42 +2,28 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="data-container">
-        <form [formGroup]="carForm">
+        <form [formGroup]="addCarForm">
           <div class="row form-group">
             <div class="col-sm-4">
-              <label>Model</label>
+              <label class="asterisk">Make *</label>
+              <input formControlName="make" type="text" class="form-control" placeholder="make">
+              <p *ngIf="!addCarForm.get('make').valid && addCarForm.get('make').dirty" class="error">This field is required!</p>
+            </div>
+            <div class="col-sm-4">
+              <label>Model *</label>
               <input formControlName="model" type="text" class="form-control" placeholder="model">
+              <p *ngIf="!addCarForm.get('model').valid && addCarForm.get('model').dirty" class="error">This field is required!</p>
             </div>
             <div class="col-sm-4">
-              <label>Type</label>
-              <input formControlName="type" type="text" class="form-control" placeholder="type">
-            </div>
-            <div class="col-sm-4">
-              <label>Plate</label>
-              <input formControlName="plate" type="text" class="form-control" placeholder="plate">
+              <label>Plate *</label>
+              <input formControlName="plate" type="text" class="form-control" placeholder="plate" maxlength="11">
+              <p *ngIf="!addCarForm.get('plate').valid && addCarForm.get('plate').dirty" class="error">
+                This field is required and must contain 3-11 characters
+              </p>
             </div>
           </div>
 
           <div class="row form-group">
-            <div class="col-sm-4">
-              <label>Delivery date</label>
-              <input formControlName="deliveryDate" type="text" class="form-control" placeholder="delivery date">
-            </div>
-            <div class="col-sm-4">
-              <label>Deadline</label>
-              <input formControlName="deadline" type="text" class="form-control" placeholder="deadline">
-            </div>
-            <div class="col-sm-4">
-              <label>Cost</label>
-              <input formControlName="cost" type="text" class="form-control" placeholder="cost">
-            </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-sm-4">
-              <label>Color</label>
-              <input formControlName="color" type="text" class="form-control" placeholder="color">
-            </div>
             <div class="col-sm-4">
               <label>Power</label>
               <input formControlName="power" type="text" class="form-control" placeholder="power">
@@ -46,18 +32,31 @@
               <label>Year</label>
               <input formControlName="year" type="text" class="form-control" placeholder="year">
             </div>
+            <div class="col-sm-4">
+              <label>Delivery date *</label>
+              <input formControlName="deliveryDate" type="text" class="form-control" placeholder="delivery date">
+              <p *ngIf="!addCarForm.get('clientSurname').valid && addCarForm.get('clientSurname').dirty" class="error">This field is required!</p>
+            </div>
           </div>
 
           <div class="row form-group">
+            <div class="col-sm-4">
+              <label>Cost</label>
+              <input formControlName="cost" type="text" class="form-control" placeholder="cost">
+            </div>
             <div class="col-sm-4">
               <label>Client First Name</label>
               <input formControlName="clientFirstName" type="text" class="form-control" placeholder="client first name">
             </div>
             <div class="col-sm-4">
-              <label>Client Last Name</label>
+              <label>Client Last Name *</label>
               <input formControlName="clientSurname" type="text" class="form-control" placeholder="client Last Name">
+              <p *ngIf="!addCarForm.get('clientSurname').valid && addCarForm.get('clientSurname').dirty" class="error">This field is required!</p>
             </div>
-            <div class="col-sm-4">
+          </div>
+
+          <div class="row form-group">
+            <div class="col-sm-12">
               <label>Is car fully damaged <br/>
                     <input formControlName="isFullyDamaged" type="checkbox">
                   </label>
@@ -66,8 +65,8 @@
 
           <div class="row">
             <div class="col-sm-12">
-              <button class="btn btn-primary float-right">Add car</button>
-              <button class="btn btn-default float-right">Reset</button>
+              <button [disabled]="addCarForm.invalid" class="btn btn-primary float-right">Add car</button>
+              <button class="btn btn-default float-right">Cancel</button>
             </div>
           </div>
         </form>
