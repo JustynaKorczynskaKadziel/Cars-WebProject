@@ -12,8 +12,10 @@ import { AddCarComponent } from './cars/add-car/add-car.component';
 import { SearchComponent } from './cars/search/search.component';
 import { EditCarComponent } from './cars/cars-list/edit-car/edit-car.component';
 import { SharedModule } from './shared-module/shared-module.module';
-import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
+
+
 
 
 @NgModule({

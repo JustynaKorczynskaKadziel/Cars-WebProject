@@ -1,10 +1,10 @@
 <app-header>
-    <p levels></p>
-  
-    <div content>
-      <p class="heading">List of cars in service</p>
-    </div>
-  </app-header>
+  <p levels></p>
+
+  <div content>
+    <p class="heading">List of cars in service</p>
+  </div>
+</app-header>
 
 <div class="container">
   <div class="row">
@@ -42,6 +42,7 @@
       </ng-template>
     </div>
   </div>
+  <div *ngIf="!hideTotalCost">
   <div class="row">
     <div class="col-sm-12">
       <button (click)="showGross()" class="btn btn-primary float-left">
@@ -57,16 +58,14 @@
       </div>
     </div>
   </div>
-
-  <div *ngIf="showForm" class='panel panel-primary'>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-sm-12">
-          <app-edit-car></app-edit-car>          
+</div>
+<div *ngIf="showForm" class='panel panel-primary'>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-12">
+        <app-edit-car></app-edit-car>
       </div>
     </div>
   </div>
 </div>
 </div>
-
-

@@ -14,6 +14,7 @@ export class CarsListComponent implements OnInit {
   totalCost : number;
   grossCost : number;
   showForm: boolean = false;
+  hideTotalCost: boolean = false;
 
   cars : Car[] = [
   {
@@ -69,5 +70,6 @@ this.countTotalCost();
 
   showEditForm() {
     this.showForm = true;
+    this.hideTotalCost = true;
   }
 }
