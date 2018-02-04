@@ -1,8 +1,8 @@
 <app-header>
-    <p levels>cars</p>
+    <p levels></p>
   
     <div content>
-      <p>List of cars in service</p>
+      <p class="heading">List of cars in service</p>
     </div>
   </app-header>
 
@@ -17,7 +17,7 @@
             <th>delivery date</th>
             <th>client</th>
             <th>cost</th>
-            <th>view details</th>
+            <th>details</th>
             <th>edit</th>
             <th>delete</th>
           </tr>
@@ -29,9 +29,9 @@
             <td> {{ car.deliveryDate }}</td>
             <td> {{ car.clientFirstName }} {{ car?.clientSurname}}</td>
             <td csImportant> {{ car.cost}}</td>
-            <td (click)="editCar(car, $event)"><button type="button" class="btn btn-primary">View Details</button></td>
+            <td (click)="editCar(car, $event)"><button type="button" class="btn btn-primary" [routerLink]="['/viewDetails']">View</button></td>
             <td (click)="showEditForm()"><button type="button" class="btn btn-success">Edit</button></td>
-            <td (click)="removeCar(car, $event)"> ( X ) </td>
+            <td (click)="removeCar(car, $event)"><button type="button" class="btn btn-danger">X</button></td>
           </tr>
         </tbody>
       </table>
@@ -68,12 +68,5 @@
   </div>
 </div>
 </div>
-
-
-
-<app-add-car></app-add-car>
-
-
-<app-car-details></app-car-details>
 
 

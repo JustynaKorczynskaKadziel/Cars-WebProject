@@ -1,7 +1,7 @@
 <app-header>
-    <p levels>cars</p>
+    <p levels></p>
     <div content>
-      <p>Car details</p>
+      <p class="heading">Car details</p>
     </div>
   </app-header>
 
@@ -65,8 +65,9 @@
     
               <div class="row">
                 <div class="col-sm-12">
-                  <button [disabled]="editCarForm.invalid" class="btn btn-primary float-right">Update car</button>
-                  <button class="btn btn-default float-right">Cancel</button>
+                    <button  class="btn btn-primary float-right" (click)="editFormEnabled()" *ngIf="editForm">Edit</button>
+                  <button [disabled]="editCarForm.invalid" class="btn btn-primary float-right" *ngIf="!editForm">Update car</button>
+                  <button class="btn btn-default float-right" *ngIf="!editForm">Cancel</button>
                 </div>
               </div>
             </form>

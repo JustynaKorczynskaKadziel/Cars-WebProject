@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background: #B3C7B8;
+    background: #A5A5A5;
 }
 
 
@@ -41,3 +41,10 @@ body{
       font-size: 11px;
       padding: 4px 8px;
     }
+
+    .heading {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FCFCFC;
+      padding-left: 50px;
+  }

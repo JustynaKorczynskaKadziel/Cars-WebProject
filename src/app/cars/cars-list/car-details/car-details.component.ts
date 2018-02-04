@@ -11,6 +11,8 @@ export class CarDetailsComponent implements OnInit {
   editCarForm : FormGroup; //represents the form
   car : Car;
   readOnly: boolean = true;
+  editForm: boolean = true;
+
   constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit() {
@@ -30,6 +32,11 @@ export class CarDetailsComponent implements OnInit {
       clientSurname: ['', Validators.required],
       isCarRepaired: '',
     });
+  }
+
+  editFormEnabled() {
+    this.editForm = false;
+    this.readOnly = false;
   }
 
 }

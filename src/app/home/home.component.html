@@ -1,0 +1,30 @@
+<app-header>
+  <p levels></p>
+  <div content>
+  </div>
+</app-header>
+<div id="homeDiv" class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div>
+        <button type="button" class="homebtn btn-default btn-block" [routerLink]="['/carsList']">List of cars</button>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div>
+        <button type="button" class="homebtn btn-default btn-block" [routerLink]="['/addCar']">Add car</button>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div>
+        <div>
+          <button class="homebtn btn-default" type="submit">
+                  <p>Search for car</p>
+                  <input type="text" class="form-control" placeholder="Search">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

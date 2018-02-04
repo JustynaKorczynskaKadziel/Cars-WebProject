@@ -1,0 +1,11 @@
+#homeDiv{
+    margin: auto;
+    padding-top:50px;
+
+}
+.homebtn{
+    width: 300px;
+    height: 200px; 
+    font-size: 26px; 
+    margin-right: 50px;
+}

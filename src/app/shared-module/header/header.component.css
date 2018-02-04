@@ -1,13 +1,15 @@
 .header {
-    background: white;
-    padding: 15px;
+    background: #770D0D;
+    padding: 10px;
     margin-bottom: 15px;
 } 
 .levels {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
-    color: blue;
+    color: #FFFFFF;
     text-transform: uppercase;
+    padding-left: 50px;
 }
+
   
   

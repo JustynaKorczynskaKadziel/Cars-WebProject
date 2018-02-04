@@ -13,6 +13,7 @@ import { SearchComponent } from './cars/search/search.component';
 import { EditCarComponent } from './cars/cars-list/edit-car/edit-car.component';
 import { SharedModule } from './shared-module/shared-module.module';
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RouterModule } from '@angular/router';
     CarsComponent,
     SearchComponent,
     EditCarComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +34,12 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     RouterModule.forRoot(
       [
-        {path: '', redirectTo: 'cars', pathMatch: 'full' },
-        {path: 'cars', component: <any>CarsListComponent}]
+        { path: '', redirectTo: 'home', pathMatch: 'full' },
+        { path: 'home', component: <any>HomeComponent },
+        { path: 'carsList', component: <any>CarsListComponent },
+        { path: 'addCar', component: <any>AddCarComponent },
+        { path: 'viewDetails', component: <any>CarDetailsComponent }
+      ]
     )
   ],
   providers: [],
