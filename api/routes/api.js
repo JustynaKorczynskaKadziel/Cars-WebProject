@@ -30,4 +30,15 @@ let response = {
     message: null
 };
 
+// Get cars
+router.get('/cars', (req, res) => {
+    console.log("check api");
+    db.cars.find((err, cars) =>{
+        if(err) return next(err);
+        response.data = cars;
+        res.json(response);
+        console.log(cars);
+    });
+});
+
 module.exports = router;
