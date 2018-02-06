@@ -42,23 +42,7 @@
       </ng-template>
     </div>
   </div>
-  <div *ngIf="!hideTotalCost">
-  <div class="row">
-    <div class="col-sm-12">
-      <button (click)="showGross()" class="btn btn-primary float-left">
-            Show Gross
-          </button>
-    </div>
-  </div>
-  <app-total-cost #totalCostRef [totalCost]="totalCost" (shownGross)="onShownGross($event)"></app-total-cost>
-  <div class="row" *ngIf="grossCost">
-    <div class="col-sm-12">
-      <div class="total-cost">
-        <p class="text-right">TOTAL GROSS COST: {{ grossCost }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+ 
 <div *ngIf="showForm" class='panel panel-primary'>
   <div class="panel-body">
     <div class="row">
