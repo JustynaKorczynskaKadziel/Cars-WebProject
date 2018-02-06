@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -15,8 +16,7 @@ import { SharedModule } from './shared-module/shared-module.module';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 
-
-
+import { CarsService } from './cars.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +32,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     ReactiveFormsModule,
     SharedModule,
     RouterModule.forRoot(
@@ -44,7 +45,7 @@ import { RouterModule } from '@angular/router';
       ]
     )
   ],
-  providers: [],
+  providers: [CarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
